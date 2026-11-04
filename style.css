@@ -1,0 +1,695 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* 1. Color Variables */
+:root {
+    --navy: #003366;
+    --orange: #FE781E;
+    --blue: #5F9FE0;
+    --light-blue: #E2F2FD;
+    --white: #FFFFFF;
+    --border: #D6E9FF;
+    --text: #526174;
+    --muted: #718096;
+    --shadow: 0 8px 24px rgba(0, 51, 102, 0.07);
+}
+
+/* 2. General Styling */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--navy);
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-width {
+    width: min(1160px, calc(100% - 48px));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 3. Navigation Bar */
+.site-header {
+    width: min(1240px, calc(100% - 48px));
+    min-height: 82px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    border-bottom: 1px solid #edf3f9;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--navy);
+    font-size: 22px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.brand img {
+    width: 39px;
+    height: 39px;
+    object-fit: contain;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.main-nav a {
+    position: relative;
+    padding: 29px 0 25px;
+    color: #42536a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--orange);
+}
+
+.main-nav a.active::after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 100%;
+    bottom: 16px;
+    left: 0;
+    background: var(--orange);
+    border-radius: 5px;
+}
+
+.signin-btn {
+    border: 1.5px solid var(--orange);
+    border-radius: 7px;
+    padding: 9px 20px;
+    color: var(--orange);
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.signin-btn:hover {
+    background: var(--orange);
+    color: white;
+}
+
+/* 4. Buttons */
+.primary-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 21px;
+    background: var(--orange);
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.primary-btn:hover {
+    background: #e96512;
+    transform: translateY(-1px);
+}
+
+/* 5. Home Hero Section */
+.home-hero {
+    margin-top: 34px;
+    min-height: 380px;
+    padding: 42px 52px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 26px;
+    background: var(--light-blue);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.eyebrow {
+    margin-bottom: 13px;
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.hero-copy h1,
+.inner-hero h1 {
+    max-width: 590px;
+    margin-bottom: 17px;
+    color: var(--navy);
+    font-size: clamp(32px, 4vw, 47px);
+    line-height: 1.16;
+    letter-spacing: -1.5px;
+}
+
+.hero-copy h1 span,
+.inner-hero h1 span {
+    color: var(--orange);
+}
+
+.hero-description,
+.inner-hero-copy > p:last-child {
+    max-width: 510px;
+    margin-bottom: 25px;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.hero-art {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-art img {
+    width: 100%;
+    max-width: 465px;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+/* 6. Learning Journey */
+.journey-section,
+.courses-section {
+    padding-top: 67px;
+    padding-bottom: 55px;
+}
+
+.section-heading {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 7px;
+    color: var(--navy);
+    font-size: 29px;
+}
+
+.section-heading p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.journey-card {
+    min-height: 190px;
+    padding: 20px 17px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.step-number {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background: #edf6ff;
+    color: var(--orange);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.journey-card h3 {
+    margin-bottom: 7px;
+    color: var(--navy);
+    font-size: 16px;
+}
+
+.journey-card p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* 7. Inner Hero - Courses and Contact */
+.inner-hero {
+    margin-top: 34px;
+    min-height: 255px;
+    padding: 35px 48px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 25px;
+    background: var(--light-blue);
+    border-radius: 12px;
+}
+
+.inner-hero h1 {
+    margin-bottom: 12px;
+    font-size: clamp(30px, 3.6vw, 42px);
+}
+
+.inner-hero-copy > p:last-child {
+    max-width: 570px;
+    margin-bottom: 0;
+}
+
+.inner-hero-art {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-hero-art img {
+    width: 100%;
+    max-width: 310px;
+    max-height: 190px;
+    object-fit: contain;
+}
+
+/* 8. Courses Grid */
+.courses-section {
+    padding-top: 55px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.course-card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #edf3f8;
+}
+
+.video-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.course-info {
+    padding: 16px 18px 18px;
+}
+
+.course-info h3 {
+    margin-bottom: 5px;
+    color: var(--navy);
+    font-size: 17px;
+}
+
+.course-info p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* 9. Explore More Banner */
+.explore-banner {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 60px;
+    padding: 22px 27px;
+    border-radius: 10px;
+    background: var(--light-blue);
+}
+
+.explore-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: white;
+    color: var(--orange);
+    font-size: 29px;
+}
+
+.explore-banner h2 {
+    margin-bottom: 2px;
+    font-size: 18px;
+}
+
+.explore-banner p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.explore-banner .primary-btn {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+/* 10. Contact Page */
+.contact-hero {
+    min-height: 225px;
+}
+
+.contact-hero .inner-hero-art img {
+    max-height: 165px;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 25px;
+    padding-top: 54px;
+    padding-bottom: 65px;
+    align-items: stretch;
+}
+
+.contact-panel {
+    padding: 31px;
+    border-radius: 11px;
+    background: var(--light-blue);
+}
+
+.contact-panel h2,
+.form-heading h2 {
+    margin-bottom: 8px;
+    color: var(--navy);
+    font-size: 24px;
+}
+
+.panel-intro {
+    margin-bottom: 28px;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 23px;
+}
+
+.detail-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 9px;
+    background: white;
+    color: var(--orange);
+    font-size: 21px;
+}
+
+.contact-detail h3 {
+    margin: 0 0 3px;
+    color: var(--orange);
+    font-size: 15px;
+}
+
+.contact-detail p,
+.contact-detail a {
+    margin: 0;
+    color: var(--navy);
+    font-size: 13px;
+}
+
+.contact-detail a:hover {
+    text-decoration: underline;
+}
+
+/* 11. Contact Form */
+.form-card {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.form-heading {
+    margin-bottom: 22px;
+}
+
+.form-heading h2 {
+    font-size: 22px;
+}
+
+.form-heading p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+    padding: 11px 12px;
+    background: white;
+    color: var(--navy);
+    font: inherit;
+    font-size: 13px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(95, 159, 224, 0.13);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+}
+
+.form-note {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+/* 12. Footer */
+.site-footer {
+    padding: 22px 24px;
+    border-top: 1px solid #edf3f9;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* 13. Tablet Responsive Design */
+@media (max-width: 900px) {
+    .journey-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-hero {
+        padding: 35px;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 14. Mobile Responsive Design */
+@media (max-width: 620px) {
+    .page-width,
+    .site-header {
+        width: calc(100% - 30px);
+    }
+
+    .site-header {
+        min-height: auto;
+        padding: 15px 0;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .brand {
+        font-size: 19px;
+    }
+
+    .brand img {
+        width: 33px;
+        height: 33px;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .main-nav a {
+        padding: 9px 0 12px;
+        font-size: 13px;
+    }
+
+    .main-nav a.active::after {
+        bottom: 4px;
+    }
+
+    .signin-btn {
+        margin-left: auto;
+        padding: 7px 13px;
+        font-size: 12px;
+    }
+
+    .home-hero,
+    .inner-hero {
+        grid-template-columns: 1fr;
+        padding: 27px 22px;
+        margin-top: 20px;
+    }
+
+    .home-hero {
+        gap: 10px;
+    }
+
+    .hero-copy h1,
+    .inner-hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-art img {
+        max-height: 220px;
+    }
+
+    .inner-hero-art img {
+        max-height: 150px;
+    }
+
+    .journey-section,
+    .courses-section {
+        padding-top: 45px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .journey-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .journey-card {
+        min-height: 170px;
+        padding: 16px 13px;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .explore-banner {
+        flex-wrap: wrap;
+        padding: 18px;
+    }
+
+    .explore-banner .primary-btn {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .contact-layout {
+        padding-top: 35px;
+    }
+
+    .contact-panel,
+    .form-card {
+        padding: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 380px) {
+    .journey-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
