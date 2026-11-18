@@ -1,0 +1,394 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --navy: #003366;
+    --orange: #FE781E;
+    --blue: #5F9FE0;
+    --light-blue: #E2F2FD;
+    --white: #FFFFFF;
+    --border: #D6E9FF;
+    --text: #526174;
+    --muted: #718096;
+    --shadow: 0 8px 24px rgba(0, 51, 102, 0.07);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background: var(--white);
+    color: var(--navy);
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-width {
+    width: min(1160px, calc(100% - 48px));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: 82px;
+    padding: 0 max(24px, calc((100% - 1240px) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    background: var(--white);
+    border-bottom: 1px solid #edf3f9;
+    box-shadow: 0 3px 12px rgba(0, 51, 102, 0.04);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--navy);
+    font-size: 22px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.brand img {
+    width: 39px;
+    height: 39px;
+    object-fit: contain;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.main-nav a {
+    position: relative;
+    padding: 29px 0 25px;
+    color: #42536a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--orange);
+}
+
+.main-nav a.active::after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 100%;
+    bottom: 16px;
+    left: 0;
+    background: var(--orange);
+    border-radius: 5px;
+}
+
+.signin-btn {
+    border: 1.5px solid var(--orange);
+    border-radius: 7px;
+    padding: 9px 20px;
+    color: var(--orange);
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.signin-btn:hover {
+    background: var(--orange);
+    color: white;
+}
+
+.primary-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 21px;
+    background: var(--orange);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.primary-btn:hover {
+    background: #e96512;
+    transform: translateY(-2px);
+}
+
+.home-hero {
+    margin-top: 34px;
+    min-height: 380px;
+    padding: 42px 52px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 26px;
+    background: var(--light-blue);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.eyebrow {
+    margin-bottom: 13px;
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.hero-copy h1 {
+    max-width: 590px;
+    margin-bottom: 17px;
+    color: var(--navy);
+    font-size: clamp(32px, 4vw, 47px);
+    line-height: 1.16;
+    letter-spacing: -1.5px;
+}
+
+.hero-copy h1 span {
+    color: var(--orange);
+}
+
+.hero-description {
+    max-width: 510px;
+    margin-bottom: 25px;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.hero-art {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-art img {
+    width: 100%;
+    max-width: 465px;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.journey-section {
+    padding-top: 67px;
+    padding-bottom: 65px;
+}
+
+.section-heading {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 7px;
+    color: var(--navy);
+    font-size: 29px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.journey-card {
+    min-height: 190px;
+    padding: 20px 17px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.journey-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 51, 102, 0.12);
+}
+
+.step-number {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background: #edf6ff;
+    color: var(--orange);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.journey-card h3 {
+    margin-bottom: 7px;
+    color: var(--navy);
+    font-size: 16px;
+}
+
+.journey-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.site-footer {
+    padding: 22px 24px;
+    border-top: 1px solid #edf3f9;
+    text-align: center;
+}
+
+.site-footer p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+    .journey-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .home-hero {
+        padding: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        min-height: 70px;
+        padding: 0 20px;
+    }
+
+    .brand {
+        font-size: 19px;
+    }
+
+    .brand img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .signin-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .home-hero {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 30px 25px;
+        margin-top: 22px;
+    }
+
+    .hero-copy h1 {
+        font-size: 36px;
+    }
+
+    .hero-art img {
+        max-height: 250px;
+    }
+
+    .journey-section {
+        padding-top: 48px;
+    }
+
+    .journey-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-width {
+        width: calc(100% - 30px);
+    }
+
+    .site-header {
+        padding: 0 15px;
+        min-height: 65px;
+    }
+
+    .brand {
+        font-size: 18px;
+        gap: 7px;
+    }
+
+    .brand img {
+        width: 31px;
+        height: 31px;
+    }
+
+    .signin-btn {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .home-hero {
+        padding: 26px 20px;
+        margin-top: 18px;
+    }
+
+    .hero-copy h1 {
+        font-size: 32px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-art img {
+        max-height: 190px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .journey-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .journey-card {
+        min-height: 145px;
+        padding: 18px;
+    }
+
+    .journey-section {
+        padding-top: 40px;
+    }
+}
